@@ -44,7 +44,7 @@ import path from 'path';
     localStorage.setItem("access_token", oo.access_token);  
     localStorage.setItem("username", "5minute");
     ///////////////////////////////////////////////////////////////////////
-    localStorage.setItem("menuList", '{"top1":1,"top2":{"18":{"name":"任务","id":"18","isbool":true,"url":"http://localhost:3000/view/Default/admin/html/Shopee/%E4%BB%BB%E5%8A%A1.html?jsFile=js02&return=%2Fview%2FDefault%2Fadmin%2Fhtml%2FShopee%2F%25E4%25BB%25BB%25E5%258A%25A1.html%3FjsFile%3Djs04"}}}');
+    localStorage.setItem("menuList", '{"top1":1,"top2":{"18":{"name":"任务","id":"18","isbool":true,"url":"https://www.rendie.com/view/Default/admin/html/iframe.html?template=Shopee/任务/index.js&jsFile=js02&return=%2Fview%2FDefault%2Fadmin%2Fhtml%2Fiframe.html%3Ftemplate%3DShopee%2F%25E4%25BB%25BB%25E5%258A%25A1%2Findex.js%26jsFile%3Djs04"}}}');
   }, {
     refresh_token: process.env.NODE_SHOPEE_REFRESH_TOKEN,
     access_token: process.env.NODE_SHOPEE_ACCESS_TOKEN    
