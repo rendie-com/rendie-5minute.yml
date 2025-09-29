@@ -48,4 +48,8 @@ jobs:
             branch: main
             folder: error/
             target-folder: error/
-      
+      - name: 删除运行记录
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+          retain_days: 1
+          keep_minimum_runs: 0
