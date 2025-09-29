@@ -3,8 +3,8 @@ on:
   # 手动触发
   workflow_dispatch:
   # 定时器
-  # schedule:
-   #  - cron: "*/5 * * * *"
+  schedule:
+    - cron: "*/5 * * * *"
 env:  
   TZ: Asia/Shanghai
 
