@@ -30,7 +30,7 @@ jobs:
           
       - name: 下载rendie-chrome扩展       
         run: |        
-          git clone https://github.com/rendie-com/rendie-chrome -b main rendie-chrome
+          git clone https://github.com/rendie-com/rendie-chrome -b main ./node/rendie-chrome
              
       - name: 运行node       
         run: |         
