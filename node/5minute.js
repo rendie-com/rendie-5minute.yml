@@ -59,7 +59,7 @@ import path from 'path';
     console.log('已运行：' + ((count * 10) / 60).toFixed(2) + '（分钟）');
     await timeout(10000);//10秒  
     if(((count * 10) / 60)>3){//表示超过3分钟就截图
-       await page.screenshot({path: '../sqlite3/error-5minute/overtime-' + count + '.png'});
+       await page.screenshot({path: '../error/overtime-' + count + '.png'});
     }
     /////////////////////////////////////////////////////
     try {
@@ -74,7 +74,7 @@ import path from 'path';
       // 处理错误的代码
       console.log("处理错误的信息：", error)
       await page.screenshot({
-        path: '../sqlite3/error-5minute/error.png'
+        path: '../error/error.png'
       });
       Enable = false;
     }
