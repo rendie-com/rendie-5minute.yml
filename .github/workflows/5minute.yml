@@ -17,13 +17,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-  
-      - uses: pnpm/action-setup@v4
-        name: Install pnpm
-        with:
-            version: 9
-            run_install: false
-            
+    
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
@@ -33,21 +27,11 @@ jobs:
         id: date
         run: |
           sudo timedatectl set-timezone "$TZ"
+          
       - name: 下载rendie_com_nextjs       
         run: |        
-          git clone https://github.com/rendie-com/rendie_com_nextjs -b main rendie_com_nextjs
-          
-      - name: 运行nextjs     
-        run: | 
-          cd ./rendie_com_nextjs/
-          pnpm i                
-          pnpm run dev &
-        env:
-          NEXTJS_CONFIG_DEFAULT_DB: ${{ secrets.NEXTJS_CONFIG_DEFAULT_DB }}  
-          NEXTJS_CONFIG_PG01: ${{ secrets.NEXTJS_CONFIG_PG01 }}  
-          NEXTJS_CONFIG_PG02: ${{ secrets.NEXTJS_CONFIG_PG02 }} 
-          NEXTJS_CONFIG_SQLITE: ${{ secrets.NEXTJS_CONFIG_SQLITE }} 
-          
+          git clone https://github.com/rendie-com/rendie-chrome -b main rendie-chrome
+             
       - name: 运行node       
         run: |
           mkdir -p ./sqlite3/error-5minute/
@@ -58,33 +42,4 @@ jobs:
         env:
           NODE_SHOPEE_ACCESS_TOKEN: ${{ secrets.NODE_SHOPEE_ACCESS_TOKEN }}  
           NODE_SHOPEE_REFRESH_TOKEN: ${{ secrets.NODE_SHOPEE_REFRESH_TOKEN }}
-          
-      # - name: 复制到发布目录       
-      #   run: | 
-      #     chmod +x releases.sh
-      #     $GITHUB_WORKSPACE/releases.sh
-          
-      - name: 部署nextjs
-        uses: JamesIves/github-pages-deploy-action@v4       
-        with: 
-            branch: main
-            folder: sqlite3/
-            target-folder: sqlite3/
-      
-      # - name: 发布固件到 Releases
-      #   uses: softprops/action-gh-release@v2
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   with:
-      #     name: sqlite3 文件发布
-      #     tag_name: 1
-      #     files: ./releases/* 
-          
-      # - name: 重新发布，当上面的发布出错丢数据时，这个发布数据还能用
-      #   uses: softprops/action-gh-release@v2
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   with:
-      #     name: 重新发布，当出错丢数据时，这个发布数据还能用
-      #     tag_name: 2
-      #     files: ./releases/* 
+    
