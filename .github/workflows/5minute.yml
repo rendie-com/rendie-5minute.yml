@@ -28,7 +28,7 @@ jobs:
         run: |
           sudo timedatectl set-timezone "$TZ"
           
-      - name: 下载rendie_com_nextjs       
+      - name: 下载rendie-chrome扩展       
         run: |        
           git clone https://github.com/rendie-com/rendie-chrome -b main rendie-chrome
              
