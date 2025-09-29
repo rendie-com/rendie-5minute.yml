@@ -33,7 +33,8 @@ jobs:
           git clone https://github.com/rendie-com/rendie-chrome -b main ./node/rendie-chrome
              
       - name: 运行node       
-        run: |         
+        run: |      
+          mkdir -p ./error/
           cd ./node/
           npm i  
           node ./5minute.js   
@@ -41,3 +42,10 @@ jobs:
           NODE_SHOPEE_ACCESS_TOKEN: ${{ secrets.NODE_SHOPEE_ACCESS_TOKEN }}  
           NODE_SHOPEE_REFRESH_TOKEN: ${{ secrets.NODE_SHOPEE_REFRESH_TOKEN }}
     
+      - name: 部署nextjs
+        uses: JamesIves/github-pages-deploy-action@v4       
+        with: 
+            branch: main
+            folder: error/
+            target-folder: error/
+      
