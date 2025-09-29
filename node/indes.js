@@ -34,7 +34,7 @@ import path from 'path';
   await page.evaluateOnNewDocument('const newProto = navigator.__proto__;delete newProto.webdriver;navigator.__proto__ = newProto;');//puppeteer去除webdriver标记问题+打包   https://www.cnblogs.com/yangdadaBO/p/14956397.html
   await page.setViewport({ width: 1920, height: 1080 });
   /////////////////////////////////////////////////////////////////////////
-  let url = "http://localhost:3000/admin.html"
+  let url = "https://www.rendie.com/admin.html"
   await page.goto(url);//为什么这个要执行俩次？答：必须要先打开网页才能设置“localStorage”。
   //通过page.evaluate进行localStorag 设置
   await page.evaluate(oo => {
