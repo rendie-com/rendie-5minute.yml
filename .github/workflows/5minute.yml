@@ -1,4 +1,4 @@
-name: 5分钟-运行nextjs和node
+name: 每5分钟-运行一次node
 on: 
   # 手动触发
   workflow_dispatch:
