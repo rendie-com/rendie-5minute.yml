@@ -33,11 +33,9 @@ jobs:
           git clone https://github.com/rendie-com/rendie-chrome -b main rendie-chrome
              
       - name: 运行node       
-        run: |
-          mkdir -p ./sqlite3/error-5minute/
-          mkdir ./releases/
-          cd ./node-shopee/
-          pnpm i  
+        run: |         
+          cd ./node/
+          npm i  
           node ./5minute.js   
         env:
           NODE_SHOPEE_ACCESS_TOKEN: ${{ secrets.NODE_SHOPEE_ACCESS_TOKEN }}  
